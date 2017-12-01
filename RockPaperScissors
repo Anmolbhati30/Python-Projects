@@ -1,0 +1,45 @@
+import random
+choices = [Rock, Paper, Scissor]
+def game():
+	num = 10000
+	score1 = 0
+	score2 = 0
+	draw = 0
+
+	for x in range(num):
+		computer1()
+		computer2()
+		
+		if choice1 == choice2:
+			draw += 1
+
+		elif choice1 = "Rock":
+			if choice2 = "Scissor":
+				score1 += 1
+			else:
+				score2 += 1
+		
+		elif choice1 = "Paper":
+			if choice2 = "Rock":
+				score1 += 1:
+			else:
+				score2 += 1
+		
+		elif choice1 = "Scissor":
+			if choice2 = "Paper":
+				score1 += 1
+			else:
+				score2 += 1
+
+
+print(score1,score2,draw)
+
+def computer1():
+	choice1 = random.randint(0,len(choices)-1)
+	global choice1
+
+def computer2():
+	choice2 = random.randint(0,len(choices)-1)
+	global choice2
+
+game()
