@@ -1,17 +1,15 @@
 import time
 
-
 def home():
-    print("""
-1 2 3 
-4 5 6
-7 8 9
-
+	print("""
 
 Player 1 = X
 Player 2 = O
-	""")
 
+Player 1 goes first
+
+The numbers in the box correspind to that move.
+	 """)
 
 
 def move():
@@ -25,13 +23,12 @@ def move():
         'f' : 6,
         'g' : 7,
         'h' : 8,
-        'i' : 9,
-        #'p1':'X',
-        #'p2':'O'
-        
+        'i' : 9,        
     }
+
     global options
     options = []
+
     for i in moves:
         options.append(moves[i])
 
@@ -52,7 +49,6 @@ def board():
 	#print(moves['d'],moves['e'],moves['f'])
 	#print(moves['g'],moves['h'],moves['i'])
 
-
 def tictactoe():
 
     global game_finish
@@ -63,13 +59,9 @@ def tictactoe():
     else:
         win_screen()
 
-    
-    
-
 def player1():
-    
-    global a,b,c,d,e,f,g,h,i,board,game_finish,options 
-    #option()
+    global a,b,c,d,e,f,g,h,i,board,game_finish,options,lastmove 
+    lastmove = 'p1'
     print("Available moves:",*options)
 
     while True:
@@ -101,18 +93,17 @@ def player1():
     board()
     time.sleep(0.5)
     win_check()
-    #option()
     player2()
 
-
-
-
 def player2():
-    global a,b,c,d,e,f,g,h,i,board,game_finish,options 
+    
+    global a,b,c,d,e,f,g,h,i,board,game_finish,options,lastmove
+    lastmove = 'p2'
+
     print("Available moves:",*options)
 
     while True:
-        try:    
+        try: 
             p2turn = int(input("Player 2 - Make a turn: "))
             break
         except ValueError:
@@ -139,24 +130,12 @@ def player2():
     board()
     time.sleep(0.5)
     win_check()
-    #option()
     player1()
 
-
-
-
-#def option():
- ##   global options,p1turn,p2turn
-   # options = list()
-
-    #for i in moves:
-     #   if moves[i] != 'X' or moves[i] != 'O':
-     #   options.append(moves[i])
-    #options.remove()
-
-
 def win_check():
-    draw_check()
+
+    global lastmove
+    
     if moves['a'] == moves['b'] == moves['c'] or moves['d'] == moves['e'] == moves['f'] or moves['g'] == moves['h'] == moves['i']: # rows win
         game_finish = True
         win_screen()
@@ -165,22 +144,29 @@ def win_check():
         game_finish = True
         win_screen()
 
-    elif moves['a'] == moves['e'] == moves['i'] or moves['c'] == moves['e'] == moves['g']:
+    elif moves['a'] == moves['e'] == moves['i'] or moves['c'] == moves['e'] == moves['g']: # diagonals win
         game_finish = True
         win_screen()
 
     else:
+        draw_check()
         pass
 
 def draw_check():
     if all(moves[i] == 'X' or moves[i] == 'O' for i in moves):
-        draw_screen()
+    	draw_screen()
     else:
         pass
 
 def win_screen():
 
-    print('Win')
+    if lastmove == 'p1':
+   	    print("Player 1 won!")
+    elif lastmove == 'p2':
+   	    print("Player 2 won")
+    else:
+    	print("Error")
+
     time.sleep(0.5)
 
     ask = input("Would you like to play again? ")
@@ -204,13 +190,11 @@ def draw_screen():
         print('Thanks for playing!')
         time.sleep(1.5)
         quit()
-    
-
+   
 def game_start():
-    move()
     home()
+    move()
     board()
     tictactoe()
-
     
 game_start()
