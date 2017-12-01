@@ -121,7 +121,7 @@ def word_input():
     guessed_word = []
     for x in word:
         if x in special_chars:
-            word_guess.append(x)
+            guessed_word.append(x)
         else:
             guessed_word.append("_")
     print("Word:",*guessed_word)
