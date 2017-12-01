@@ -1,11 +1,11 @@
 import time
 import string
-alphabet = list(string.ascii_lowercase)
-for x in string.ascii_uppercase:
-    alphabet.append(x)
 
+alphabet = list(string.ascii_lowercase)
 special_chars = [" ", "-"]
 
+for x in string.ascii_uppercase:
+    alphabet.append(x)
 
 def hangman():
     global mistakes
@@ -44,7 +44,7 @@ def hangman():
 		""")
     if mistakes == 4:
         print("""
-             _________
+       	 _________
 	    |         |
 	    |         0
 	    |        
@@ -66,22 +66,22 @@ def hangman():
 		""")
     if mistakes == 6:
         print("""
-	     _________
-	    |         |
-	    |         0""")
-        print("            |        /|""\\")
-        print("""            |        
-	    |
-	    |
-	    """)
-	
+         _________
+        |         |
+        |         0""")
+        print("        |        /|""\\")
+        print("""        |        
+        |
+        |
+        """)
+    
     if mistakes == 7:
         print ("""
              _________
             |         |
             |         0""")
         print("            |        /|""\\")
-        print(" 	    |        / ""\\")
+        print("            |        / ""\\")
         print("""            |
             |
 
@@ -91,9 +91,6 @@ def hangman():
     else:
         pass
 		
-
-
-
 def word_input():
     global incorrect
     incorrect = []
@@ -125,18 +122,12 @@ def word_input():
         else:
             guessed_word.append("_")
     print("Word:",*guessed_word)
-    
-
-
 
 def display():
     print("\n"*50)
     print("Word:",*guessed_word,'\n')
     print("Incorrect guessed letters:",*incorrect)
     hangman()
-
-
-
 
 def word_guess():
     global guess,mistakes
@@ -151,9 +142,6 @@ def word_guess():
         word_guess()
     else:
         word_check()
-
-
-
 
 def word_check():
     global mistakes
@@ -210,3 +198,4 @@ def game_start():
     word_guess()
 
 game_start()
+
