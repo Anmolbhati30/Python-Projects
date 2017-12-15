@@ -4,16 +4,14 @@ def div_by_upto():
 
 	while True:
 		try:
-			num = int(input("Enter a number: "))                                                  # 
+			num = int(input("Enter a number: "))                                                   
 			if num != 0:
-				break 																			  # 
+				break 																			   
 			else:
-				print("Enter a non-zero integer value")                                           # 
+				print("Enter a non-zero integer value")                                            
 		except ValueError:
 			print("Enter a valid integer value")
-
-
-
+	
 	number = 1
 	test_num = 1
 	
@@ -23,7 +21,8 @@ def div_by_upto():
 			break
 
 		if all(number%(x+1) == 0 for x in range(test_num)):
-			print("Smallest number divisible by all numbers upto","{} : {}".format(test_num,number))
+			print("Smallest number divisible by all numbers upto:\n")
+			print("{} : {}".format(test_num,number))
 			test_num += 1
 		number += 1
 
