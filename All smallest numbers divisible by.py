@@ -14,14 +14,15 @@ def div_by_upto():
 	
 	number = 1
 	test_num = 1
-	
+	print("Smallest number divisible by all numbers upto:\n")
 	while True:
 		
 		if num < test_num:
+			print("\n")
 			break
 
 		if all(number%(x+1) == 0 for x in range(test_num)):
-			print("Smallest number divisible by all numbers upto:\n")
+			
 			print("{} : {}".format(test_num,number))
 			test_num += 1
 		number += 1
