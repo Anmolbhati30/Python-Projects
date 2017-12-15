@@ -1,6 +1,6 @@
+print("This function prints all the smallest numbers divisible by: 1, 1 -> 2, 1 -> 3,.., 1 -> num; where num is your number")
 def div_by_upto():
 
-	print("This function prints all the smallest numbers divisible by: 1, 1 -> 2, 1 -> 3,.., 1 -> num; where num is your number")
 
 	while True:
 		try:
@@ -23,9 +23,8 @@ def div_by_upto():
 			break
 
 		if all(number%(x+1) == 0 for x in range(test_num)):
-			test_num += 1                                        #
-			print("n =",number)
-
+			print("Smallest number divisible by all numbers upto","{} : {}".format(test_num,number))
+			test_num += 1
 		number += 1
 
 	div_by_upto()
