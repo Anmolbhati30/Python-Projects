@@ -1,0 +1,48 @@
+import string
+
+alphabet_string = string
+
+
+def zipf():
+	sample_text = "Vestibulum scelerisque vitae nunc in ultrices. Curabitur quis nibh rhoncus, posuere mi vitae, venenatis massa. Nunc blandit, enim imperdiet imperdiet porttitor, ipsum leo venenatis diam, sit amet pretium erat elit ut augue. Ut malesuada justo ut pharetra placerat. Vestibulum sollicitudin placerat felis, et condimentum lacus viverra tincidunt. Integer vel odio suscipit erat iaculis dapibus et ac sem. Morbi et vestibulum libero, et ultrices ligula. Vivamus rhoncus dapibus mi, vitae egestas massa gravida at.unc luctus non lorem id pulvinar. Sed semper ut ante vel auctor. Aenean maximus mi eget mattis imperdiet. Nam non est sit amet ipsum ultricies consectetur et ut velit. Sed iaculis lectus magna, a venenatis nisl dignissim non. Duis justo risus, tristique tempus egestas et, venenatis id felis. Suspendisse sagittis odio id imperdiet facilisis. Nullam non pharetra velit. Praesent urna magna, condimentum vel imperdiet nec, consectetur ac odio.liquam tincidunt leo id quam accumsan, sed ornare arcu hendrerit. Suspendisse lobortis consectetur eleifend. Donec sollicitudin, dui eu elementum placerat, neque libero aliquet neque, a auctor tortor turpis ac enim. Nunc vitae venenatis urna, non laoreet quam. Integer aliquam sem porta lacus maximus, eget tincidunt ex convallis. Nunc ultricies nunc velit, sit amet accumsan mauris lacinia porta. Nulla ut consequat tortor, id placerat libero. In dui odio, fermentum non lorem ut, tempus sodales sapien. Praesent eleifend convallis dui, ut varius mauris dictum id. Nunc id risus a metus consequat malesuada. Etiam a tristique orci, sit amet eleifend orci. Donec mattis libero non est fringilla, et faucibus ex sagittis. Nam eu lobortis neque. Vivamus pretium sapien feugiat consequat maximus. Proin auctor sem vitae lacus vehicula, nec mattis ligula sollicitudin.Suspendisse et mauris tempus, tempor ipsum eget, malesuada augue. Donec rhoncus faucibus nisi, ut ultrices augue fringilla eu. Nullam sed libero sodales, commodo lacus et, maximus quam. Sed suscipit a massa eu elementum. Nulla ultricies facilisis diam, sit amet faucibus nulla. Cras aliquam pellentesque nibh dignissim tristique. Suspendisse in sapien facilisis sapien ultricies placerat. Suspendisse vel ex tincidunt, malesuada risus euismod, sagittis ipsum. In lorem nunc, accumsan at urna et, elementum mattis libero. Aenean in leo suscipit, congue libero ac, elementum eros. Aenean lorem massa, rutrum ac malesuada in, maximus varius magna. Aliquam ultricies purus quis tortor vehicula, a venenatis purus imperdiet. Nam tortor felis, volutpat ac libero nec, semper venenatis mauris.Ut ultricies metus metus, vitae accumsan velit rutrum commodo. Nunc eleifend urna ac dui lacinia egestas. Duis vel ipsum at arcu tincidunt finibus et ut dolor. Quisque rhoncus varius feugiat. Sed elementum est a metus luctus, vitae luctus lorem tempus. Nunc vehicula sed nibh eget congue. Donec in magna in lectus maximus finibus quis pretium lacus. Nam auctor feugiat est eget dapibus. Morbi at tempus urna. Donec luctus at tortor vitae hendrerit. Cras vulputate sed felis eget iaculis. Nunc id purus odio"
+	sample_text_array = ''.join(sample_text.split(" "))
+	print(sample_text_array)
+
+	alphabet = {
+		'a':0,
+		'b':0,
+		'c':0,
+		'd':0,
+		'e':0,
+		'f':0,
+		'g':0,
+		'h':0,
+		'i':0,
+		'j':0,
+		'k':0,
+		'l':0,
+		'm':0,
+		'n':0,
+		'o':0,
+		'p':0,
+		'q':0,
+		'r':0,
+		's':0,
+		't':0,
+		'u':0,
+		'v':0,
+		'w':0,
+		'x':0,
+		'y':0,
+		'z':0
+	}
+
+
+	for i in alphabet:
+		for x in sample_text_array:
+			if x == i:
+				alphabet[i] += 1
+	for i in alphabet:
+		print(i,"=", alphabet[i])
+
+zipf()
